@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'user_repository.dart';
 import 'all_notes_page.dart';
 import 'register_page.dart';
+
+
 
 
 class LoginPage extends StatefulWidget {
@@ -10,15 +13,21 @@ class LoginPage extends StatefulWidget {
 }
 
 
+
+
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _userRepository = UserRepository();
 
 
+
+
   void _login() async {
     final username = _usernameController.text.trim();
     final password = _passwordController.text.trim();
+
+
 
 
     if (username.isEmpty || password.isEmpty) {
@@ -29,7 +38,11 @@ class _LoginPageState extends State<LoginPage> {
     }
 
 
+
+
     final user = await _userRepository.getUser(username, password);
+
+
 
 
     if (user != null) {
@@ -45,12 +58,16 @@ class _LoginPageState extends State<LoginPage> {
   }
 
 
+
+
   void _navigateToRegister() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => RegisterPage()),
     );
   }
+
+
 
 
   @override
@@ -157,5 +174,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-

@@ -3,10 +3,14 @@ import 'user_repository.dart';
 import 'user.dart';
 
 
+
+
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
+
+
 
 
 class _RegisterPageState extends State<RegisterPage> {
@@ -16,10 +20,14 @@ class _RegisterPageState extends State<RegisterPage> {
   final _userRepository = UserRepository();
 
 
+
+
   void _register() async {
     final username = _usernameController.text.trim();
     final password = _passwordController.text.trim();
     final confirmPassword = _confirmPasswordController.text.trim();
+
+
 
 
     if (username.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
@@ -30,6 +38,8 @@ class _RegisterPageState extends State<RegisterPage> {
     }
 
 
+
+
     if (password != confirmPassword) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Passwords do not match'))
@@ -38,8 +48,12 @@ class _RegisterPageState extends State<RegisterPage> {
     }
 
 
+
+
     final user = User(username: username, password: password);
     await _userRepository.createUser(user);
+
+
 
 
     // Navigate to LoginPage after successful registration
@@ -48,6 +62,8 @@ class _RegisterPageState extends State<RegisterPage> {
       SnackBar(content: Text('User registered successfully. Please log in.'))
     );
   }
+
+
 
 
   @override

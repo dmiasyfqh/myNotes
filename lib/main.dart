@@ -5,14 +5,18 @@ import 'settings_page.dart';
 import 'theme_provider.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
 
   // Initialize ffi loader if necessary
   sqfliteFfiInit();
 
+
   // Change the default factory to FFI
   databaseFactory = databaseFactoryFfi;
+
 
   runApp(
     ChangeNotifierProvider(
@@ -21,6 +25,7 @@ void main() {
     ),
   );
 }
+
 
 class MyApp extends StatelessWidget {
   @override

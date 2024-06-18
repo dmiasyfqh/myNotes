@@ -1,7 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'note_repository.dart';
 import 'note.dart';
+
+
+
+
 
 
 
@@ -13,7 +18,15 @@ class NoteDetailPage extends StatefulWidget {
 
 
 
+
+
+
+
   NoteDetailPage({required this.note, required this.index});
+
+
+
+
 
 
 
@@ -25,6 +38,10 @@ class NoteDetailPage extends StatefulWidget {
 
 
 
+
+
+
+
 class _NoteDetailPageState extends State<NoteDetailPage> {
   bool _isEditing = false;
   TextEditingController _titleController = TextEditingController();
@@ -32,6 +49,10 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
   Color _selectedColor = Colors.white;
   String _selectedEmoji = '🙂';
   String _selectedFeeling = 'Happy';
+
+
+
+
 
 
 
@@ -58,6 +79,10 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
     Color(0xFF81D4FA), // Sky blue pastel
     Color(0xFFCFD8DC), // Light blue-grey pastel
   ];
+
+
+
+
 
 
 
@@ -126,7 +151,15 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
 
 
 
+
+
+
+
   final NoteRepository _noteRepository = NoteRepository();
+
+
+
+
 
 
 
@@ -138,6 +171,10 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
       });
     }
   }
+
+
+
+
 
 
 
@@ -164,6 +201,10 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
       },
     );
   }
+
+
+
+
 
 
 
@@ -205,6 +246,10 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
 
 
 
+
+
+
+
   void _saveNote() async {
     String title = _titleController.text;
     String content = _contentController.text;
@@ -235,6 +280,10 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
 
 
 
+
+
+
+
   @override
   void initState() {
     super.initState();
@@ -244,6 +293,10 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
     _selectedEmoji = widget.note.emoji;
     _selectedFeeling = widget.note.feeling;
   }
+
+
+
+
 
 
 

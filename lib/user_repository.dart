@@ -2,14 +2,20 @@ import 'database_helper.dart';
 import 'user.dart';
 
 
+
+
 class UserRepository {
   final dbHelper = DatabaseHelper.instance;
+
+
 
 
   Future<int> createUser(User user) async {
     final db = await dbHelper.database;
     return await db.insert('users', user.toMap());
   }
+
+
 
 
   Future<User?> getUser(String username, String password) async {
@@ -21,9 +27,13 @@ class UserRepository {
     );
 
 
+
+
     if (result.isNotEmpty) {
       return User.fromMap(result.first);
     }
     return null;
   }
 }
+
+
